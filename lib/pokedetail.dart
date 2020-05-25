@@ -16,6 +16,7 @@ class PokeDetails extends StatelessWidget {
         left: 10.0,
         top: MediaQuery.of(context).size.height*0.15,
         child: Card(
+          elevation: 20.0,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -62,12 +63,16 @@ class PokeDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.redAccent,
+      backgroundColor: Colors.white,
       appBar: AppBar(
+        iconTheme: IconThemeData(
+          color: Color(0x14058F).withOpacity(1.0)
+        ),
         centerTitle: true,
-        title: Text(pokemon.name),
-        backgroundColor: Colors.red,
-        elevation: 10.0,
+        title: Text(pokemon.name, style: TextStyle(
+            fontFamily: 'HN', fontWeight: FontWeight.bold,
+            color: Color(0x14058F).withOpacity(1.0))),
+        backgroundColor: Color(0xFFB1DCFC).withOpacity(1.0),
       ),
 
       body: bodyWidget(context),
